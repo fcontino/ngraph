@@ -17,7 +17,6 @@ function getGraphFromQueryString(queryString) {
   var m = parseInt(query.m, 10) || 10;
 
   var graphGenerators = require('ngraph.generators');
-  var createGraph = graphGenerators[query.graph] || graphGenerators.ladder;
-  return graphGenerators.grid3(10,10,10);
-//  return createGraph(n, m, 10);
+  var createGraph = graphGenerators[query.graph] || graphGenerators.grid;
+  return createGraph(n, m);
 }

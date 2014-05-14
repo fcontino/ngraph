@@ -18,9 +18,8 @@ function getGraphFromQueryString(queryString) {
   var m = parseInt(query.m, 10) || 10;
 
   var graphGenerators = require('ngraph.generators');
-  var createGraph = graphGenerators[query.graph] || graphGenerators.ladder;
-  return graphGenerators.grid3(10,10,10);
-//  return createGraph(n, m, 10);
+  var createGraph = graphGenerators[query.graph] || graphGenerators.grid;
+  return createGraph(n, m);
 }
 
 },{"./ui":32,"ngraph.fabric":3,"ngraph.generators":28,"query-string":31}],2:[function(require,module,exports){
